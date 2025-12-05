@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: spring-mcp-client
+  ai:
+    google.genai:
+      api-key: ${GEMINI_API_KEY}
+      chat.options.model: gemini-2.5-pro
+    mcp:
+      client:
+        name: spring-io-mcp-sse
+        version: 0.0.1
+        toolcallback:
+          enabled: true
+        sse:  # streamable-http --- better one
+          connections:
+            spring-io-mcp-sse:
+              url: http://localhost:8085
+
+
